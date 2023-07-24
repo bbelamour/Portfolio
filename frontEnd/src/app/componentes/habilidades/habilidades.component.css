@@ -1,0 +1,30 @@
+.carta {
+  width: 100%;
+  opacity: 0.9;
+  margin: 25px;
+  background-color: rgba(143, 23, 123, 0.733);
+  color: white;
+  border-radius: 20px 18px  ;
+}
+.card {
+  width: 100%;
+  background-color: rgba(143, 23, 123, 0.474);
+  border-radius: 20px 18px ;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+  text-align: center;
+
+    
+}
+
+@media (max-width: 600px) {
+  .carta {
+    display: inline-block;
+    margin-left: 18px;
+    width: 100%;
+    
+
+  }
+}
+  

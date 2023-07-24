@@ -1,0 +1,170 @@
+<section>
+    <div class="col-11 col-xs-8 col-sm-11 col-md-11 col-lg-11">
+        <div class="carta">
+            <div class="p-2">
+                <div>
+                    <button class="btn btn-dark m-2" data-bs-toggle="modal" *ngIf="isLogged" data-bs-target="#myModalAddSkill"
+                        style="float:right;">AGREGAR</button>
+                </div>
+                <h1>Hard & Soft Skills</h1>
+            </div>
+
+            
+            <div class="card">
+                <div *ngFor="let item of misHabilidades, let indice=index">
+
+                    <div>
+                        <h4 class="tituloSkills">{{item.tituloSkills}}</h4>
+               
+                        <circle-progress class="col-12"
+                        [percent]="item.porcentaje"
+                        [radius]="100"
+               [imageSrc]="item.imgSkills"
+                        [showImage]="true"
+                        [imageHeight]="70"
+                        [imageWidth]="70"
+                        [showUnits]="false"
+                        [showSubtitle]="false"
+                        [outerStrokeWidth]="10"
+                        [innerStrokeWidth]="3"
+                        [outerStrokeColor]="'rgba(106, 8, 167, 0.474)'"
+                        [innerStrokeColor]="'rgba(208, 174, 232, 0.474)'"
+                        [animation]="true"
+                        [animationDuration]="500"
+                      ></circle-progress>
+                    </div>
+                    
+                   
+
+           <div class="botones mb-2 d-grid gap-2 d-md-flex justify-content-md-end">
+                 <div>
+                    <button type="button" class="btn btn-primary" *ngIf="isLogged" data-bs-toggle="modal"
+                       data-bs-target="#myModalEditSkill" (click)="findSkills(indice)"> EDITAR</button>
+                        </div>
+                    <div><button class="btn btn-danger" *ngIf="isLogged"  data-bs-toggle="modal"
+                       data-bs-target="#myModalDeleteSkill"
+                           (click)="findSkills(indice)" >ELIMINAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-----------------------------------EDITAR--------------------------------------------->
+<div class="modal" id="myModalEditSkill">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Editar habilidad</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form [formGroup]="formHabilidades" (ngSubmit)="editSkill(skillsId)">
+                    <div class="mb-3 mt-3">
+                        <label for="tituloSkills" class="form-label">Titulo</label>
+                        <input class="form-control"  placeholder="Ingrese el titulo de la habilidad"
+                            name="tituloSkills"  formControlName="tituloSkills"  [ngModel]="tituloSkillsSelect">
+                    </div>
+                    <div class="mb-3">
+                        <label for="imgSkills" class="form-label">Img de la habilidad</label>
+                        <input class="form-control" placeholder="Ingrese url"
+                            formControlName="imgSkills" name="imgSkills" [ngModel]="imgSkillsSelect">
+                    </div>
+                    <div class="mb-3">
+                        <label for="porcentaje" class="form-label">Porcentaje</label>
+                        <input class="form-control" placeholder="Ingrese porcentaje de conocimiento"
+                            formControlName="porcentaje" name="descripcionProyects" [ngModel]="porcentajeSelect">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">EDITAR</button>
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-------------------------------------AGREGAR-------------------------------------------->
+
+<div class="modal" id="myModalAddSkill">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Agregar una habilidad</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form [formGroup]="formHabilidades" (ngSubmit)="addSkill(skillsId)">
+                    <div class="mb-3 mt-3">
+                        <label for="tituloSkills" class="form-label">Titulo</label>
+                        <input class="form-control" id="tituloSkills" placeholder="Ingrese el titulo de su habilidad"
+                            name="tituloSkills" formControlName="tituloSkills" [ngModel]="tituloSkillsSelect">
+                    </div>
+                    <div class="mb-3">
+                        <label for="imgSkills" class="form-label">Img de la habilidad</label>
+                        <input class="form-control" id="imgSkills" placeholder="Ingrese url"
+                            formControlName="imgSkills" name="imgSkills" [ngModel]="imgSkillsSelect">
+                    </div>
+
+                    <div class="mb-3 mt-3">
+                        <label for="porcentaje" class="form-label">Porcentaje</label>
+                        <input class="form-control" id="porcentaje" placeholder="Ingrese porcentaje"
+                            formControlName="porcentaje" name="porcentaje" [ngModel]="porcentajeSelect">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-----------------------------------------ELIMINAR------------------------------------------>
+
+<div class="modal" id="myModalDeleteSkill">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title"> Eliminar Habilidad? </h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form [formGroup]="formHabilidades" (ngSubmit)="deleteSkill(skillsId)">
+                    <h4>{{tituloSkillsSelect}}</h4>
+                    <button type="submit" class="btn btn-primary">Eliminar</button>
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
+</div>

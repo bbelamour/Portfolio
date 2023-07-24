@@ -1,0 +1,42 @@
+.carta {
+  width: 100%;
+  opacity: 0.9;
+  margin: 25px;
+  background-color: rgba(143, 23, 123, 0.733);
+  color: white;
+  border-radius: 20px 18px  ;
+}
+.card {
+  width: 100%;
+  background-color: rgba(143, 23, 123, 0.474);
+  border-radius: 20px 18px ;
+  padding: 10px;
+
+    
+}
+.container-contenido {
+  display: block;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+  border-bottom: 2px solid rgba(167, 8, 140, 0.474);
+  text-overflow: clip;
+
+
+}
+
+.botones {
+  display: flex;
+  justify-content: flex-end;
+  
+  
+}
+
+@media (max-width: 600px) {
+  .carta {
+    display: inline-block;
+    margin-left: 18px;
+    width: 100%;
+    
+
+  }
+}

@@ -1,0 +1,43 @@
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #6a11cb;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+  }
+.navegador {
+    position: relative; 
+    z-index: 3;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(4,15,77,1) 38%, rgba(120,12,131,1) 100%);
+    height: 65px;
+    line-height: 60px;
+    color: #fff;
+    width: 100%;
+}
+ .redes{ 
+  float: right;
+  margin: 25px 15px 0 0;
+  
+ }
+
+
+
+.modal{
+  background-color:  rgba(42, 34, 41, 0.178);
+  
+}
+.modal-title { color: white;}
+.modal-body { color: white;}
+.modal-footer { color: white;}
+.modal-content{   background: #3c0a7d;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(143, 23, 123, 0.8), rgb(50, 36, 114,1));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right,rgba(143, 23, 123, 0.8), rgba(50, 36, 114, 1))}
+

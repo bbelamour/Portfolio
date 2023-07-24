@@ -1,0 +1,21 @@
+.banner { 
+
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+    border-radius: 0 0 13px 13px;
+}
+.img-fluid{
+    position: relative;
+    height: 200px;
+    width: 200px; 
+    z-index: 2;
+    margin-top: -15%;
+    margin-left: 20px;
+    border-radius: 50%;
+    border: black solid 1px;
+    
+    
+  }
+
+
