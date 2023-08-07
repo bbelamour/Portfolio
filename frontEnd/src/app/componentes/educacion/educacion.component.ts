@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { EducationService } from 'src/app/servicios/education.service';
 import { Education } from 'src/app/models/education/education';
 import { TokenService } from 'src/app/servicios/token.service';
-import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-educacion',
